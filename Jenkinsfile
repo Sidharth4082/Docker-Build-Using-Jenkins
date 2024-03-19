@@ -19,7 +19,11 @@ pipeline {
 	}
 	stage ('Pull and Deploy') {
 	  steps {
-	    bat 'docker run -d --name=using-jenkins -p 8000:8000 hello-Docker'
+	    bat 'docker login -u sid2104 -p BaPP4082#@Y docker.io'
+        bat 'docker pull sid2104/dockerhub:docker-hello'
+      }		
+	  steps {
+	    bat 'docker run -d --name=using-jenkins -p 8000:8000 sid2104/dockerhub:docker-hello'
 		}
 	}
 }
