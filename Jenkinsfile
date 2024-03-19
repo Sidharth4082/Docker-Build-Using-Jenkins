@@ -13,7 +13,8 @@ pipeline {
 	}
 	stage ('Push') {
 	  steps {
-	    bat 'docker push sid2104/dockerhub:hello-docker'
+	    bat 'docker tag python-app:v1 sid2104/dockerhub:docker-hello'
+	    bat 'docker push sid2104/dockerhub:docker-hello'
 		}
 	}
 	stage ('Pull and Deploy') {
