@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage ('Build') {
 	  steps {
-	    bat 'docker build -d hello-Docker .'
+	    bat 'docker build -t python-app:v1 .'
 		}
 	}
 	stage ('Login') {
