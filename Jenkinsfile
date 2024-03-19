@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage ('Build') {
 	  steps {
-	    bat 'docker build -t hello-Docker .'
+	    bat 'docker build -d hello-Docker .'
 		}
 	}
 	stage ('Login') {
